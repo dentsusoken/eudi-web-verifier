@@ -77,6 +77,12 @@
                   "with": "src/environments/environment.development.ts"
                 }
               ]
+            },
+            "local": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
             }
           },
           "defaultConfiguration": "production"
@@ -93,6 +99,9 @@
             },
             "development": {
               "buildTarget": "verifier-ui:build:development"
+            },
+            "local": {
+              "buildTarget": "verifier-ui:build:local"
             }
           },
           "defaultConfiguration": "development"
