@@ -1,0 +1,10 @@
+--- src/app/core/models/attestation/AttestationType.ts	2026-03-06 18:15:36
++++ /tmp/AttestationType_local_tmp.ts	2026-03-06 18:20:30
+@@ -5,5 +5,6 @@
+   EHIC = "ehic",
+   EHIC_DC4EU = "ehic-dc4eu",
+   PDA1 = "pda1",
+-  LEARNING_CREDENTIAL = "learning_credential"
++  LEARNING_CREDENTIAL = "learning_credential",
++  ACADEMIC_CREDIT = "academic_credit"
+ }

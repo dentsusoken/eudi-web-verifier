@@ -1,0 +1,28 @@
+--- src/app/core/constants/attestation-definitions.ts	2026-03-06 18:15:44
++++ src/app/core/constants/attestation-definitions_local.ts	2026-03-06 18:22:30
+@@ -183,6 +183,19 @@
+   ]
+ }
+ 
++export const ACADEMIC_CREDIT_ATTESTATION: AttestationDefinition = {
++  name: "Academic Credit",
++  type: AttestationType.ACADEMIC_CREDIT,
++  dataSet: [
++    { identifier: 'credit_id', attribute: 'Credit ID' },
++    { identifier: 'student_id', attribute: 'Student ID' },
++    { identifier: 'course_code', attribute: 'Course Code' },
++    { identifier: 'course_name', attribute: 'Course Name' },
++    { identifier: 'academic_term', attribute: 'Academic Term' },
++    { identifier: 'grade', attribute: 'Grade' },
++  ]
++}
++
+ export const SUPPORTED_ATTESTATIONS: { [id: string]: AttestationDefinition } = {
+   "pid": PID_ATTESTATION,
+   "mdl": MDL_ATTESTATION,
+@@ -191,4 +204,5 @@
+   "ehic-dc4eu": EHIC_ATTESTATION_DC4EU,
+   "pda1": PDA1_ATTESTATION,
+   "learning_credential": LEARNING_CREDENTIAL_ATTESTATION,
++  "academic_credit": ACADEMIC_CREDIT_ATTESTATION,
+ }

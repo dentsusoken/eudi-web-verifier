@@ -77,6 +77,26 @@
                   "with": "src/environments/environment.development.ts"
                 }
               ]
+            },
+            "local": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/app/core/models/attestation/AttestationType.ts",
+                  "with": "src/app/core/models/attestation/AttestationType_local.ts"
+                },
+                {
+                  "replace": "src/app/core/constants/attestation-definitions.ts",
+                  "with": "src/app/core/constants/attestation-definitions_local.ts"
+                },
+                {
+                  "replace": "src/app/core/constants/attestations-per-format.ts",
+                  "with": "src/app/core/constants/attestations-per-format_local.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -93,6 +113,9 @@
             },
             "development": {
               "buildTarget": "verifier-ui:build:development"
+            },
+            "local": {
+              "buildTarget": "verifier-ui:build:local"
             }
           },
           "defaultConfiguration": "development"
