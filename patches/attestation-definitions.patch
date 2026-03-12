@@ -1,6 +1,6 @@
 --- src/app/core/constants/attestation-definitions.ts	2026-03-06 18:15:44
-+++ src/app/core/constants/attestation-definitions_local.ts	2026-03-06 18:22:30
-@@ -183,6 +183,19 @@
++++ src/app/core/constants/attestation-definitions_local.ts	2026-03-11 17:04:33
+@@ -183,6 +183,31 @@
    ]
  }
  
@@ -17,12 +17,25 @@
 +  ]
 +}
 +
++export const UNIVERSITY_STUDENT_ATTESTATION: AttestationDefinition = {
++  name: "University Student",
++  type: AttestationType.UNIVERSITY_STUDENT,
++  dataSet: [
++    { identifier: 'given_name', attribute: 'Given Name' },
++    { identifier: 'family_name', attribute: 'Family Name' },
++    { identifier: 'email', attribute: 'Email' },
++    { identifier: 'enrollment_year', attribute: 'Enrollment Year' },
++    { identifier: 'university_name', attribute: 'University Name' },
++  ]
++}
++
  export const SUPPORTED_ATTESTATIONS: { [id: string]: AttestationDefinition } = {
    "pid": PID_ATTESTATION,
    "mdl": MDL_ATTESTATION,
-@@ -191,4 +204,5 @@
+@@ -191,4 +216,6 @@
    "ehic-dc4eu": EHIC_ATTESTATION_DC4EU,
    "pda1": PDA1_ATTESTATION,
    "learning_credential": LEARNING_CREDENTIAL_ATTESTATION,
 +  "academic_credit": ACADEMIC_CREDIT_ATTESTATION,
++  "university_student": UNIVERSITY_STUDENT_ATTESTATION,
  }
