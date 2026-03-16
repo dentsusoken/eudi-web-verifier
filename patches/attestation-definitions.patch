@@ -1,12 +1,25 @@
 --- src/app/core/constants/attestation-definitions.ts	2026-03-06 18:15:44
-+++ src/app/core/constants/attestation-definitions_local.ts	2026-03-11 17:04:33
-@@ -183,6 +183,31 @@
++++ src/app/core/constants/attestation-definitions_local.ts	2026-03-14 00:00:00
+@@ -183,6 +183,44 @@
    ]
  }
- 
-+export const ACADEMIC_CREDIT_ATTESTATION: AttestationDefinition = {
-+  name: "Academic Credit",
-+  type: AttestationType.ACADEMIC_CREDIT,
+
++export const ACADEMIC_CREDIT_2024_FALL_ATTESTATION: AttestationDefinition = {
++  name: "Academic Credit 2024 Fall",
++  type: AttestationType.ACADEMIC_CREDIT_2024_FALL,
++  dataSet: [
++    { identifier: 'credit_id', attribute: 'Credit ID' },
++    { identifier: 'student_id', attribute: 'Student ID' },
++    { identifier: 'course_code', attribute: 'Course Code' },
++    { identifier: 'course_name', attribute: 'Course Name' },
++    { identifier: 'academic_term', attribute: 'Academic Term' },
++    { identifier: 'grade', attribute: 'Grade' },
++  ]
++}
++
++export const ACADEMIC_CREDIT_2025_SPRING_ATTESTATION: AttestationDefinition = {
++  name: "Academic Credit 2025 Spring",
++  type: AttestationType.ACADEMIC_CREDIT_2025_SPRING,
 +  dataSet: [
 +    { identifier: 'credit_id', attribute: 'Credit ID' },
 +    { identifier: 'student_id', attribute: 'Student ID' },
@@ -32,10 +45,11 @@
  export const SUPPORTED_ATTESTATIONS: { [id: string]: AttestationDefinition } = {
    "pid": PID_ATTESTATION,
    "mdl": MDL_ATTESTATION,
-@@ -191,4 +216,6 @@
+@@ -191,4 +229,7 @@
    "ehic-dc4eu": EHIC_ATTESTATION_DC4EU,
    "pda1": PDA1_ATTESTATION,
    "learning_credential": LEARNING_CREDENTIAL_ATTESTATION,
-+  "academic_credit": ACADEMIC_CREDIT_ATTESTATION,
++  "academic_credit_2024_fall": ACADEMIC_CREDIT_2024_FALL_ATTESTATION,
++  "academic_credit_2025_spring": ACADEMIC_CREDIT_2025_SPRING_ATTESTATION,
 +  "university_student": UNIVERSITY_STUDENT_ATTESTATION,
  }
