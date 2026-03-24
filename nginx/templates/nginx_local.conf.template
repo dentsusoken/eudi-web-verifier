@@ -1,0 +1,19 @@
+# http {
+    include /etc/nginx/mime.types;
+    server {
+        listen 4300;
+        server_name localhost;
+        root /usr/share/nginx/html;
+        index index.html;
+
+        # Proxy API requests to the backend
+        location ~ ^/(ui|wallet|utilities)/ {
+            proxy_pass ${BACKEND_URL};
+        }
+
+        # Serve Angular app
+        location / {
+            try_files $uri $uri/ /index.html;
+        }
+    }
+# }

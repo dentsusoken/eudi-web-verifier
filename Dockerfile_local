@@ -1,0 +1,17 @@
+# Stage 1: Build with local configuration
+# Requires _local.ts files to be generated beforehand:
+#   bash scripts/patch_nii_demo.sh
+FROM node:20.19.3 AS build-step
+WORKDIR /usr/src/app
+COPY package.json /usr/src/app
+RUN yarn install
+COPY . /usr/src/app
+RUN rm -rf dist
+ENV DOMAIN_NAME="" APP_NAME="" OPENID4VP_DRAFT=""
+RUN npm run config && npx ng build --configuration=local
+
+# Stage 2: Serve with nginx
+FROM nginx
+COPY nginx/templates/nginx_local.conf.template /etc/nginx/templates/nginx_local.conf.template
+COPY --from=build-step /usr/src/app/dist/verifier-ui/browser /usr/share/nginx/html
+EXPOSE 4300
